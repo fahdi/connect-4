@@ -18,15 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add event listeners to the cells for player moves
   const cells = document.querySelectorAll('.cell');
+  // Add event listeners to the cells for player moves
+  // Add event listeners to the cells for player moves
   cells.forEach(cell => {
     cell.addEventListener('click', () => {
       const column = cell.dataset.column;
       const row = findEmptyRow(column);
       if (row !== -1) {
-        const index = row * COLUMNS + parseInt(column);
+        const index = row;
         boardArray[index] = currentPlayer;
-        cell.classList.remove('empty');
-        cell.classList.add(currentPlayer);
+        cells[index].classList.remove('empty');
+        cells[index].classList.add(currentPlayer);
         currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
         checkWin(index);
       }
@@ -44,18 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Function to find the first empty row in a column
-  function findEmptyRow(column) {
+  function findEmptyRow(column){
     for (let row = ROWS - 1; row >= 0; row--) {
       const index = row * COLUMNS + parseInt(column);
       if (boardArray[index] === 'empty') {
-        return row;
+        return index; // Return the index of the bottom-most empty cell in the column
       }
     }
     return -1; // Column is full
   }
 
   // Function to check for a win
-  function checkWin(index) {
+  function checkWin(index){
     const row = Math.floor(index / COLUMNS);
     const col = index % COLUMNS;
     const currentPlayerColor = boardArray[index];
@@ -76,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Helper function to check a direction for consecutive pieces
-    function checkDirection(dx, dy) {
+    function checkDirection(dx, dy){
       let count = 0;
       let i = row + dy;
       let j = col + dx;
@@ -96,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function resetGame() {
+  function resetGame(){
     // Implement game reset logic here
     location.reload();
   }
