@@ -1,6 +1,6 @@
 # Connect Four
 
-Connect Four is a classic two-player connection game in which players take turns dropping colored discs into a grid. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs.
+Connect Four is a classic two-player connection game in which players take turns dropping coloured discs into a grid. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs.
 
 ![Connect Four Screenshot](screenshot.png)
 
@@ -32,7 +32,7 @@ Connect Four is a classic strategy board game that is easy to learn but offers d
 
 ## Demo
 
-You can play a live demo of Connect Four [here]().
+You can play a live demo of Connect Four [here](https://fahdi.github.io/connect-four/).
 
 ## Getting Started
 
